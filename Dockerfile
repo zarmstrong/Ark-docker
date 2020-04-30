@@ -36,6 +36,8 @@ ENV GID 1000
 RUN apt-get update &&\ 
     apt-get install -y curl lib32gcc1 lsof git mlocate vim
 
+RUN touch /etc/sudoers
+
 # Enable passwordless sudo for users under the "sudo" group
 RUN sed -i.bkp -e \
 	's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers \
@@ -59,7 +61,6 @@ COPY inputrc /etc/inputrc
 COPY inputrc /home/steam/.inputrc
 
 RUN touch /root/.bash_profile
-RUN touch /etc/sudoers
 RUN chmod 777 /home/steam/run.sh
 RUN chmod 777 /home/steam/user.sh
 RUN mkdir  /ark
