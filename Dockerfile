@@ -59,6 +59,7 @@ COPY inputrc /etc/inputrc
 COPY inputrc /home/steam/.inputrc
 
 RUN touch /root/.bash_profile
+RUN touch /etc/sudoers
 RUN chmod 777 /home/steam/run.sh
 RUN chmod 777 /home/steam/user.sh
 RUN mkdir  /ark
