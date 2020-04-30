@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-MAINTAINER TuRzAm
+MAINTAINER zarmstrong
 
 # Var for first config
 # Server Name
