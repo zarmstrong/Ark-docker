@@ -55,6 +55,8 @@ COPY run.sh /home/steam/run.sh
 COPY user.sh /home/steam/user.sh
 COPY crontab /home/steam/crontab
 COPY arkmanager-user.cfg /home/steam/arkmanager.cfg
+COPY inputrc /etc/inputrc
+COPY inputrc /home/steam/.inputrc
 
 RUN touch /root/.bash_profile
 RUN chmod 777 /home/steam/run.sh
