@@ -18,14 +18,14 @@ __Don't forget to use `docker pull turzam/ark` to get the latest version of the 
 
 ## Usage
 Fast & Easy server setup :   
-`docker run -d -p 7778:7778 -p 7778:7778/udp -p 27015:27015 -p 27015:27015/udp -e SESSIONNAME=arkserver -e ADMINPASSWORD="mypasswordadmin" --name ark turzam/ark`
+`docker run -d -p 7777:7777 -p 7777:7777/udp -p 27015:27015 -p 27015:27015/udp -e SESSIONNAME=arkserver -e ADMINPASSWORD="mypasswordadmin" --name ark turzam/ark`
 
 You can map the ark volume to access config files :  
-`docker run -d -p 7778:7778 -p 7778:7778/udp -p 27015:27015 -p 27015:27015/udp -e SESSIONNAME=arkserver -v /my/path/to/ark:/ark --name ark zarmstrong/ark-server`  
+`docker run -d -p 7777:7777 -p 7777:7777/udp -p 27015:27015 -p 27015:27015/udp -e SESSIONNAME=arkserver -v /my/path/to/ark:/ark --name ark zarmstrong/ark-server`  
 Then you can edit */my/path/to/ark/arkmanager.cfg* (the values override GameUserSetting.ini) and */my/path/to/ark/[GameUserSetting.ini/Game.ini]*
 
 You can manager your server with rcon if you map the rcon port (you can rebind the rcon port with docker):  
-`docker run -d -p 7778:7778 -p 7778:7778/udp -p 27015:27015 -p 27015:27015/udp -p 32330:32330  -e SESSIONNAME=arkserver --name ark zarmstrong/ark-server`  
+`docker run -d -p 7777:7777 -p 7777:7777/udp -p 27015:27015 -p 27015:27015/udp -p 32330:32330  -e SESSIONNAME=arkserver --name ark zarmstrong/ark-server`  
 
 You can change server and steam port to allow multiple servers on same host:  
 *(You can't just rebind the port with docker. It won't work, you need to change STEAMPORT & SERVERPORT variable)*
@@ -70,7 +70,7 @@ To add mods, you only need to change the variable ark_GameModIds in *arkmanager.
 
 ## Recommended Usage
 - First run  
- `docker run -it -p 7778:7778 -p 7778:7778/udp -p 27015:27015 -p 27015:27015/udp -p 32330:32330 -e SESSIONNAME=arkserver -e ADMINPASSWORD="mypasswordadmin" -e AUTOUPDATE=120 -e AUTOBACKUP=60 -e WARNMINUTE=30 -v /my/path/to/ark:/ark --name ark zarmstrong/ark-server`  
+ `docker run -it -p 7777:7777 -p 7777:7777/udp -p 27015:27015 -p 27015:27015/udp -p 32330:32330 -e SESSIONNAME=arkserver -e ADMINPASSWORD="mypasswordadmin" -e AUTOUPDATE=120 -e AUTOBACKUP=60 -e WARNMINUTE=30 -v /my/path/to/ark:/ark --name ark zarmstrong/ark-server`  
 - Wait for ark to be downloaded installed and launched, then Ctrl+C to stop the server.
 - Edit */my/path/to/ark/GameUserSetting.ini and Game.ini*
 - Edit */my/path/to/ark/arkserver.cfg* to add mods and configure warning time.
@@ -95,7 +95,7 @@ Admin password of your ark server (default : "adminpassword")
 + __SERVERPORT__
 Ark server port (can't rebind with docker, it doesn't work) (default : 27015)
 + __STEAMPORT__
-Steam server port (can't rebind with docker, it doesn't work) (default : 7778)
+Steam server port (can't rebind with docker, it doesn't work) (default : 7777)
 + __BACKUPONSTART__
 1 : Backup the server when the container is started. 0: no backup (default : 1)
 + __UPDATEPONSTART__
@@ -131,7 +131,7 @@ GID of the user used. Owner of the volume /ark
 --- 
 
 ## Expose
-+ Port : __STEAMPORT__ : Steam port (default: 7778)
++ Port : __STEAMPORT__ : Steam port (default: 7777)
 + Port : __SERVERPORT__ : server port (default: 27015)
 + Port : __32330__ : rcon port
 
