@@ -34,7 +34,7 @@ ENV GID 1000
 
 # Install dependencies 
 RUN apt-get update &&\ 
-    apt-get install -y curl lib32gcc1 lsof git mlocate vim
+    apt-get install -y curl lib32gcc1 lsof git mlocate vim lib32stdc++6 gdebi wget
 
 RUN touch /etc/sudoers
 
@@ -89,10 +89,13 @@ RUN chown steam -R /ark && chmod 755 -R /ark
 #USER steam 
 
 # download steamcmd
-RUN mkdir /home/steam/steamcmd &&\ 
-	cd /home/steam/steamcmd &&\ 
-	curl http://media.steampowered.com/installer/steamcmd_linux.tar.gz | tar -vxz 
+#RUN mkdir /home/steam/steamcmd &&\
+#	cd /home/steam/steamcmd &&\ 
+#	curl http://media.steampowered.com/installer/steamcmd_linux.tar.gz | tar -vxz 
 
+#RUN wget http://media.steampowered.com/client/installer/steam.deb -O /tmp/steam.deb &&\
+#    gedbi /tmp/steam.deb
+    
 
 # First run is on anonymous to download the app
 # We can't download from docker hub anymore -_-
