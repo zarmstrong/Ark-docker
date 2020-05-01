@@ -34,7 +34,7 @@ ENV GID 1000
 
 # Install dependencies 
 RUN apt-get update &&\ 
-    apt-get install -y curl lib32gcc1 lsof git mlocate vim lib32stdc++6 wget
+    apt-get install -y curl lib32gcc1 lsof git mlocate vim lib32stdc++6 wget htop iotop
 #RUN apt-get install -y gdebi
 
 RUN touch /etc/sudoers
