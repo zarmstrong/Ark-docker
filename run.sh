@@ -48,7 +48,7 @@ if [ ! -d /ark/server  ] || [ ! -f /ark/server/arkversion ];then
 	mkdir -p /ark/server/ShooterGame/Content/Mods
 	mkdir -p /ark/server/ShooterGame/Binaries/Linux/
 	touch /ark/server/ShooterGame/Binaries/Linux/ShooterGameServer
-	arkmanager install
+	arkmanager install --verbose	
 	# Create mod dir
 else
 
@@ -73,9 +73,9 @@ fi
 
 # Launching ark server
 if [ $UPDATEONSTART -eq 0 ]; then
-	arkmanager start -noautoupdate
+	arkmanager start -noautoupdate --verbose	
 else
-	arkmanager start
+	arkmanager start --verbose
 fi
 
 
