@@ -8,14 +8,14 @@ ark:
     - ADMINPASSWORD=adminpassword
     - BACKUPONSTART=1
     - UPDATEONSTART=1
-    - TZ=Europe/Paris
+    - TZ=America/Denver
     - GID=1000
     - UID=1000
   volumes:
     - /my/path/to/ark:/ark
   ports:
-   - 7778:7778/udp
-   - 7778:7778
+   - 7777:7777/udp
+   - 7777:7777
    - 27015:27015/udp
    - 27015:27015
    - 32330:32330
