@@ -1,6 +1,6 @@
 ark:
   container_name: ark
-  image: turzam/ark
+  image: zarmstrong/ark
   environment:
     - SESSIONNAME=Ark Docker
     - SERVERMAP=TheIsland
